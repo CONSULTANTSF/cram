@@ -1,0 +1,22 @@
+- name: init
+  hosts: all
+  remote_user: root
+  become: yes
+  become_method: sudo
+  roles:
+    - role: ANXS.postgresql
+      postgresql_version: 10
+      postgresql_databases:
+        - name: '{{database_name}}'
+      postgresql_users:
+        - name: '{{database_user}}'
+          pass: ''
+          encrypted: yes
+      postgresql_user_privileges:
+        - name: '{{database_user}}'
+          db: '{{database_name}}'
+          priv: 'ALL'
+          role_attr_flags: 'SUPERUSER'
+    - role: ansiblebit.oracle-java
+    - role: YasushiKobayashi.direnv
+    - role: direnv

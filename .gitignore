@@ -1,0 +1,10 @@
+.hgignore
+.hg/
+
+.envrc
+
+.vagrant/
+Vagrant/provision/roles/
+*.retry
+
+*.log

@@ -1,0 +1,3 @@
+- src: ANXS.postgresql
+- src: ansiblebit.oracle-java
+- src: YasushiKobayashi.direnv

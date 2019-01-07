@@ -1,0 +1,11 @@
+- name: make sure bashrc exists
+  become: false
+  file:
+    path: ~/.bashrc
+    state: touch
+
+- name: set direnv bashrc
+  become: false
+  lineinfile:
+    dest: ~/.bashrc
+    line: 'eval "$(direnv hook bash)"'
