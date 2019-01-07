@@ -20,3 +20,4 @@
     - role: ansiblebit.oracle-java
     - role: YasushiKobayashi.direnv
     - role: direnv
+    - role: init
