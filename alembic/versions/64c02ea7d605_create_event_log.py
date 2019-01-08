@@ -17,8 +17,14 @@ depends_on = None
 
 
 def upgrade():
-    pass
+    op.create_table(
+        'transaction',
+        sa.Column('customer_id', sa.Integer),
+        sa.Column('product_id', sa.Integer),
+        sa.Column('quantity', sa.BigInteger),
+        sa.Column('price_total_quantity', sa.Numeric(24, 2)),
+    )
 
 
 def downgrade():
-    pass
+    op.drop_table('transaction')

@@ -1,2 +1,5 @@
-SQLAlchemy==1.2.15
 alembic==1.0.5
+psycopg2==2.7.6.1
+pyrsistent==0.14.9
+pytest==4.1.0
+SQLAlchemy==1.2.15
