@@ -1,16 +1,40 @@
 # Qbiz Training
 
-## Getting Started
+## Installation and Setup
 
 1. Clone this.
 2. Install Vagrant.
 3. Install VirtualBox.
 4. Instantiate Vagrant VirtualBox
 
-## Clone This
+### Clone This
 
-## Install Vagrant
+```
+git clone git@github.com/qbizinc/training
+```
 
-## Install VirtualBox
+### Install Vagrant
 
-## Instantiate Vagrant VirtualBox
+?
+
+### Install VirtualBox
+
+?
+
+### Instantiate Vagrant VirtualBox
+
+```
+vagrant up
+```
+
+## Run Tests
+
+```
+vagrant ssh
+```
+
+```
+cd /vagrant/
+pip install -r requirements.txt
+python -m pytest tests
+```
