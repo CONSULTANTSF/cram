@@ -1,6 +1,7 @@
-- name: Install a list of packages
-  apt:
-    name: "{{ packages }}"
-  vars:
-    packages:
-    - python-pip
+- name: get_url
+  get_url:
+    dest: "/tmp/get-pip.py"
+    url: "https://bootstrap.pypa.io/get-pip.py"
+
+- name: script
+  script: "/tmp/get-pip.py"

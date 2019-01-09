@@ -27,6 +27,17 @@ git clone git@github.com/qbizinc/training
 vagrant up
 ```
 
+### Install Python Libraries
+
+```
+vagrant ssh
+```
+
+```
+cd /vagrant/
+sudo pip install -r requirements.txt
+```
+
 ## Run Tests
 
 ```
@@ -35,6 +46,5 @@ vagrant ssh
 
 ```
 cd /vagrant/
-pip install -r requirements.txt
 python -m pytest tests
 ```
