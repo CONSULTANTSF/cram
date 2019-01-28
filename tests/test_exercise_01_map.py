@@ -1,5 +1,10 @@
 import pytest
 from training.exercise_01_map import *
+from training.exercise_01_map.python_imperative import *
+from training.exercise_01_map.python_functional import *
+from training.exercise_01_map.sql import *
+from training.exercise_01_map.map_reduce import *
+from training.exercise_01_map.spark import *
 
 from mrjob.inline import InlineMRJobRunner
 import pyrsistent
@@ -85,9 +90,9 @@ def event_log_table(rollback_connection):
     return table
 
 
-def test_python_imperative_map(event_log_table):
+def test_python_imperative(event_log_table):
     actual = []
-    for row in python_imperative_map(event_log_table):
+    for row in python_imperative(event_log_table):
         row_ = dict(row)
         row_['price_total_quantity'] = row_['price_total_quantity'].normalize().as_tuple()
         row_['price_per_unit'] = row_['price_per_unit'].normalize().as_tuple()
@@ -96,9 +101,9 @@ def test_python_imperative_map(event_log_table):
     assert expected == actual
 
 
-def test_python_functional_map(event_log_table):
+def test_python_functional(event_log_table):
     actual = []
-    for row in python_functional_map(event_log_table):
+    for row in python_functional(event_log_table):
         row_ = dict(row)
         row_['price_total_quantity'] = row_['price_total_quantity'].normalize().as_tuple()
         row_['price_per_unit'] = row_['price_per_unit'].normalize().as_tuple()
@@ -107,10 +112,10 @@ def test_python_functional_map(event_log_table):
     assert expected == actual
 
 
-def test_sql_map(rollback_connection):
-    sql = sql_map()
+def test_sql(rollback_connection):
+    sql_ = sql()
     actual = []
-    for row in rollback_connection.execute(sql):
+    for row in rollback_connection.execute(sql_):
         row_ = dict(row)
         row_['price_total_quantity'] = row_['price_total_quantity'].normalize().as_tuple()
         row_['price_per_unit'] = row_['price_per_unit'].normalize().as_tuple()
@@ -119,8 +124,8 @@ def test_sql_map(rollback_connection):
     assert expected == actual
 
 
-def test_map_reduce_map():
-    mrjob_cls = map_reduce_map()
+def test_map_reduce():
+    mrjob_cls = map_reduce()
     mrjob = mrjob_cls()
     mrjob.sandbox(stdin=input_bytes)
     mrjob_runner = mrjob.make_runner()
