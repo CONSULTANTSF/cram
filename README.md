@@ -15,11 +15,11 @@ git clone git@github.com/qbizinc/training
 
 ### Install Vagrant
 
-?
+[Instructions](https://www.vagrantup.com/docs/installation/) - [Downloads](https://www.vagrantup.com/downloads.html)
 
 ### Install VirtualBox
 
-?
+[Downloads](https://www.virtualbox.org/wiki/Downloads)
 
 ### Instantiate Vagrant VirtualBox
 
