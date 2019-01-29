@@ -2,16 +2,10 @@
 
 ## Installation and Setup
 
-1. Clone this.
-2. Install Vagrant.
-3. Install VirtualBox.
+1. Install Vagrant.
+2. Install VirtualBox.
+3. Clone this Qbiz training repo.
 4. Instantiate Vagrant VirtualBox
-
-### Clone This
-
-```
-git clone git@github.com:Qbizinc/training.git
-```
 
 ### Install Vagrant
 
@@ -21,6 +15,12 @@ git clone git@github.com:Qbizinc/training.git
 
 [Downloads](https://www.virtualbox.org/wiki/Downloads)
 
+### Clone this Qbiz training repo
+
+```
+git clone git@github.com:Qbizinc/training.git
+```
+
 ### Instantiate Vagrant VirtualBox
 
 ```
@@ -28,6 +28,7 @@ cd training
 vagrant up
 ```
 (this will take a while - downloading from AWS)
+(there may be ominous-looking errors but Vagrant migh be just fine - keep going)
 
 ### Install Python Libraries
 
@@ -39,6 +40,8 @@ vagrant ssh
 cd /vagrant/
 sudo pip install -r requirements.txt
 ```
+
+If you get an error with pip (could be due to errors in instantiating Vagrant above), run 'sudo apt-get install python-pip' then repeat step above.
 
 ## Run Tests
 
