@@ -10,7 +10,7 @@
 ### Clone This
 
 ```
-git clone git@github.com/qbizinc/training
+git clone git@github.com:Qbizinc/training.git
 ```
 
 ### Install Vagrant
@@ -24,8 +24,10 @@ git clone git@github.com/qbizinc/training
 ### Instantiate Vagrant VirtualBox
 
 ```
+cd training
 vagrant up
 ```
+(this will take a while - downloading from AWS)
 
 ### Install Python Libraries
 
