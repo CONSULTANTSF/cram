@@ -27,8 +27,17 @@ git clone git@github.com:Qbizinc/training.git
 cd training
 vagrant up
 ```
-(this will take a while - downloading from AWS)
-(there may be ominous-looking errors but Vagrant migh be just fine - keep going)
+
+This will take a while. The following are happening:
+
+1. If not already cached, download the Ubuntu VM image from AWS.
+2. Initialize the VM from the image with the networking and storage mount options in the `Vagrantfile`.
+3. Provision the VM using Ansible.
+
+NB: There should be no errors, especially not Ansible errors. If there are, please reach out for help. The most common causes are:
+
+* Networking configuration, especially on Windows.
+* Transient network errors - "resolving" means DNS, etc.
 
 ### Install Python Libraries
 
@@ -41,7 +50,7 @@ cd /vagrant/
 sudo pip install -r requirements.txt
 ```
 
-If you get an error with pip (could be due to errors in instantiating Vagrant above), run 'sudo apt-get install python-pip' then repeat step above.
+If you get an error with `pip`, please reach out for help. `pip` should have been properly installed upon provisioning by the corresponding Ansible role.
 
 ## Run Tests
 

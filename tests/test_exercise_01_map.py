@@ -1,5 +1,5 @@
 import pytest
-from training.exercise_01_map import *
+from . import *
 from training.exercise_01_map.python_imperative import *
 from training.exercise_01_map.python_functional import *
 from training.exercise_01_map.sql import *
@@ -8,7 +8,6 @@ from training.exercise_01_map.spark import *
 
 from mrjob.inline import InlineMRJobRunner
 import pyrsistent
-import sqlalchemy as sa
 
 import decimal
 import io
@@ -63,11 +62,6 @@ expected = pyrsistent.pset([
 
 
 @pytest.fixture
-def database_engine():
-    return sa.create_engine('postgresql://qbizinc@localhost/qbizinc')
-
-
-@pytest.fixture
 def rollback_connection(database_engine):
     metadata = database_metadata()
     transaction_table = database_transaction_table(metadata)
@@ -90,9 +84,17 @@ def event_log_table(rollback_connection):
     return table
 
 
-def test_python_imperative(event_log_table):
+@pytest.mark.dependency()
+def test_01_map_python_imperative(event_log_table):
+    try:
+        actual_ = python_imperative(event_log_table)
+    except NotImplementedError:
+        print('''
+Please see the ./training/exercise_01_map/python_imperative.py and complete the python_imperative() function.
+        ''')
+        assert False
     actual = []
-    for row in python_imperative(event_log_table):
+    for row in actual_:
         row_ = dict(row)
         row_['price_total_quantity'] = row_['price_total_quantity'].normalize().as_tuple()
         row_['price_per_unit'] = row_['price_per_unit'].normalize().as_tuple()
@@ -101,9 +103,17 @@ def test_python_imperative(event_log_table):
     assert expected == actual
 
 
-def test_python_functional(event_log_table):
+@pytest.mark.dependency(depends=['test_01_map_python_imperative'])
+def test_01_map_python_functional(event_log_table):
+    try:
+        actual_ = python_functional(event_log_table)
+    except NotImplementedError:
+        print('''
+Please see the ./training/exercise_01_map/python_functional.py and complete the python_functional() function.
+        ''')
+        assert False
     actual = []
-    for row in python_functional(event_log_table):
+    for row in actual_:
         row_ = dict(row)
         row_['price_total_quantity'] = row_['price_total_quantity'].normalize().as_tuple()
         row_['price_per_unit'] = row_['price_per_unit'].normalize().as_tuple()
@@ -112,8 +122,15 @@ def test_python_functional(event_log_table):
     assert expected == actual
 
 
-def test_sql(rollback_connection):
-    sql_ = sql()
+@pytest.mark.dependency(depends=['test_01_map_python_functional'])
+def test_01_map_sql(rollback_connection):
+    try:
+        sql_ = sql()
+    except NotImplementedError:
+        print('''
+Please see the ./training/exercise_01_map/sql.py and complete the sql() function.
+        ''')
+        assert False
     actual = []
     for row in rollback_connection.execute(sql_):
         row_ = dict(row)
@@ -124,8 +141,15 @@ def test_sql(rollback_connection):
     assert expected == actual
 
 
-def test_map_reduce():
-    mrjob_cls = map_reduce()
+@pytest.mark.dependency(depends=['test_01_map_map_reduce'])
+def test_01_map_map_reduce():
+    try:
+        mrjob_cls = map_reduce()
+    except NotImplementedError:
+        print('''
+Please see the ./training/exercise_01_map/map_reduce.py and complete the map_reduce() function.
+        ''')
+        assert False
     mrjob = mrjob_cls()
     mrjob.sandbox(stdin=input_bytes)
     mrjob_runner = mrjob.make_runner()
@@ -146,3 +170,8 @@ def test_map_reduce():
         }))
     actual = pyrsistent.pset(actual)
     assert expected == actual
+
+
+@pytest.mark.dependency(depends=['test_01_map_map_reduce'])
+def test_01_map_spark():
+    assert False
