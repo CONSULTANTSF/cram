@@ -2,18 +2,18 @@
 
 ## Installation and Setup
 
-1. Install Vagrant.
-2. Install VirtualBox.
+1. Install a hypervisor - for Mac OSX we suggest Oracle VM VirtualBox (free and open-source); recent versions of Windows have a built-in hypervisor
+2. Install Vagrant.
 3. Clone this Qbiz training repo.
 4. Instantiate Vagrant VirtualBox
-
-### Install Vagrant
-
-[Instructions](https://www.vagrantup.com/docs/installation/) - [Downloads](https://www.vagrantup.com/downloads.html)
 
 ### Install VirtualBox
 
 [Downloads](https://www.virtualbox.org/wiki/Downloads)
+
+### Install Vagrant
+
+[Instructions](https://www.vagrantup.com/docs/installation/) - [Downloads](https://www.vagrantup.com/downloads.html)
 
 ### Clone this Qbiz training repo
 
