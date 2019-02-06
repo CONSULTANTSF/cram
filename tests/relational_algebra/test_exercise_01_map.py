@@ -1,10 +1,10 @@
 import pytest
 from . import *
-from training.exercise_01_map.python_imperative import *
-from training.exercise_01_map.python_functional import *
-from training.exercise_01_map.sql import *
-from training.exercise_01_map.map_reduce import *
-from training.exercise_01_map.spark import *
+from training.relational_algebra.exercise_01_map.python_imperative import *
+from training.relational_algebra.exercise_01_map.python_functional import *
+from training.relational_algebra.exercise_01_map.sql import *
+from training.relational_algebra.exercise_01_map.map_reduce import *
+from training.relational_algebra.exercise_01_map.spark import *
 
 from mrjob.inline import InlineMRJobRunner
 import pyrsistent
