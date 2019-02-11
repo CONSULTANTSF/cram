@@ -7,6 +7,24 @@
 3. External Resources
 4. Internal Resources
    1. Training Framework Exercises
+      1. Map
+      2. Reduce
+      3. Partition Reduce
+      4. Filter
+      5. Filter After Reduce
+      4. Natural Join
+      5. Outer Join
+      6. Recursive Join
+      7. Partition Map
+      8. Partition Map with Filter
+      9. Sort
+      10. Partition Map with Offset
+      11. Partition Map with Offset After Sort
+      12. Unnest
+      13. Limit
+      14. Union
+      15. Intersect
+      16. Except
 
 ## 1. Introduction
 
