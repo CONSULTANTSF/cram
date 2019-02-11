@@ -36,25 +36,6 @@ Python was originally developed to be a pure scripting language. We will learn t
 
 #### 1.1.3. Internal Resources
 
-### 1.2. Relational Algebra
-
-Relational algebra is a formal system of mathematics for reasoning about operations on a common data structure, tuplesets, which can informally be thought of as tables. Virtually all operations on data in contemporary analytics and data science are based on relational algebra.
-
-We will learn, informally, how to think in terms of relational algebra. Don't worry, no theoretical math will be involved!
-
-#### 1.2.1. Objectives
-
-1. Learn what the primitive relational operators are and how to compose them.
-2. Begin to understand how these operators may be implemented on concrete data types.
-3. Start to develop a feel for the resource utilization of given relational operation execution trees.
-
-#### 1.2.2. External Resources
-
-1. http://infolab.stanford.edu/~ullman/fcdb/aut07/slides/ra.pdf
-2. https://www.w3schools.in/dbms/relational-algebra/
-
-#### 1.2.3. Internal Resources
-
 ### 1.3. SQL
 
 #### 1.3.1. Objectives
