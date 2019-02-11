@@ -1,0 +1,2 @@
+def sql():
+    raise NotImplementedError()
