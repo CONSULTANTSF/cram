@@ -131,6 +131,12 @@ vagrant provision
 
 If the problem persists, please reach out for help.
 
+Update the Postgresql database:
+
+```
+alembic upgrade head
+```
+
 #### 2.1.5. Install Python Libraries
 
 ```

@@ -1,5 +1,5 @@
 import pytest
-from . import *
+from .. import *
 from training.relational_algebra.exercise_01_map.python_imperative import *
 from training.relational_algebra.exercise_01_map.python_functional import *
 from training.relational_algebra.exercise_01_map.sql import *

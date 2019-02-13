@@ -1,5 +1,5 @@
 import pytest
-from training.exercise_01_map import *
+from training.relational_algebra.exercise_01_map import *
 
 import sqlalchemy as sa
 
