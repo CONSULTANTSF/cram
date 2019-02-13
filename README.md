@@ -97,6 +97,8 @@ Python was originally developed to be a pure scripting language. We will learn t
 2. Install Vagrant.
 3. Clone this Qbiz training repo.
 4. Instantiate Vagrant
+5. Install Python Libraries
+6. Migrate the PostgreSQL Database
 
 #### 2.1.1. Install VirtualBox
 
@@ -133,12 +135,6 @@ vagrant provision
 
 If the problem persists, please reach out for help.
 
-Update the Postgresql database:
-
-```
-alembic upgrade head
-```
-
 #### 2.1.5. Install Python Libraries
 
 ```
@@ -151,6 +147,12 @@ sudo pip install -r requirements.txt
 ```
 
 If you get an error with `pip`, please reach out for help. `pip` should have been properly installed upon provisioning by the corresponding Ansible role.
+
+#### 2.1.6. Migrate the PostgreSQL Database
+
+```
+alembic upgrade head
+```
 
 ### 2.2. Run Tests
 
