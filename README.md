@@ -91,7 +91,9 @@ Python was originally developed to be a pure scripting language. We will learn t
 
 ### 2.1. Installation and Setup
 
-1. Install a hypervisor - for Mac OSX, Linux we suggest Oracle VM VirtualBox (free and open-source); Windows 10 has a built-in hypervisor, enable Hyper V under Windows features
+1. Install a virtualization host
+   - For macOS and Linux, please use Oracle VM VirtualBox (free and open-source)
+   - Windows 10 has a built-in hypervisor, enable Hyper V under Windows features
 2. Install Vagrant.
 3. Clone this Qbiz training repo.
 4. Instantiate Vagrant
