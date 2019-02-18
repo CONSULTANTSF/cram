@@ -3,8 +3,7 @@
 ## Table of Contents
 
 1. Overview
-2. Curriculae
-3. Modules
+2. Modules
    1. Scripting (with Python)
    2. Relational Algebra
    3. SQL
@@ -12,9 +11,23 @@
    5. Lazy Distributed Data (with Spark)
    6. Orchestration of Data Tasks (with Airflow)
    7. Software Engineering (with Python)
+3. Curriculae
+   1. Entry-Level Data Engineer To First Engagement
 4. Training Framework
 
-## 1. Curriculum
+## 1. Overview
+
+`cram` is the formal, structured training process for Qbiz. It consists of three (3) sets of assets:
+
+1. Modules: self-contained training content for specific skills and subject areas.
+2. Curriculae: suggested sequences of modules meant to fast track teammates to specific types and levels of productivity.
+3. Automated Evaluation Framework: exercises in a programming environment with automated evaluation of solution correctness.
+
+If starting out, review the curriculae to see which ones are applicable to you. Then install the automated evaluation framework, and look at the modules in the selected curriculae at the same time.
+
+## 2. Modules
+
+## 3. Curriculae
 
 ### 1.1. Scripting (with Python)
 
