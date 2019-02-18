@@ -91,10 +91,14 @@ Python was originally developed to be a pure scripting language. We will learn t
 
 ### 2.1. Installation and Setup
 
-1. Install a hypervisor - for Mac OSX we suggest Oracle VM VirtualBox (free and open-source); recent versions of Windows have a built-in hypervisor
+1. Install a virtualization host
+   - For macOS and Linux, please use Oracle VM VirtualBox (free and open-source)
+   - Windows 10 has a built-in hypervisor, enable Hyper V under Windows features
 2. Install Vagrant.
 3. Clone this Qbiz training repo.
-4. Instantiate Vagrant VirtualBox
+4. Instantiate Vagrant
+5. Install Python Libraries
+6. Migrate the PostgreSQL Database
 
 #### 2.1.1. Install VirtualBox
 
@@ -110,7 +114,7 @@ Python was originally developed to be a pure scripting language. We will learn t
 git clone git@github.com:Qbizinc/training.git
 ```
 
-#### 2.1.4. Instantiate Vagrant VirtualBox
+#### 2.1.4. Instantiate Vagrant
 
 ```
 cd training
@@ -123,10 +127,13 @@ This will take a while. The following are happening:
 2. Initialize the VM from the image with the networking and storage mount options in the `Vagrantfile`.
 3. Provision the VM using Ansible.
 
-NB: There should be no errors, especially not Ansible errors. If there are, please reach out for help. The most common causes are:
+NB: On Windows and Linux, there can be transient DNS errors - "failed to resolve ...". Try the following up to 3 times with one minute gap.
 
-* Networking configuration, especially on Windows.
-* Transient network errors - "resolving" means DNS, etc.
+```
+vagrant provision
+```
+
+If the problem persists, please reach out for help.
 
 #### 2.1.5. Install Python Libraries
 
@@ -140,6 +147,12 @@ sudo pip install -r requirements.txt
 ```
 
 If you get an error with `pip`, please reach out for help. `pip` should have been properly installed upon provisioning by the corresponding Ansible role.
+
+#### 2.1.6. Migrate the PostgreSQL Database
+
+```
+alembic upgrade head
+```
 
 ### 2.2. Run Tests
 
