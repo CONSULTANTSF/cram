@@ -2,7 +2,9 @@
 
 ## Table of Contents
 
-1. Curriculum
+1. Overview
+2. Curriculae
+3. Modules
    1. Scripting (with Python)
    2. Relational Algebra
    3. SQL
@@ -10,7 +12,7 @@
    5. Lazy Distributed Data (with Spark)
    6. Orchestration of Data Tasks (with Airflow)
    7. Software Engineering (with Python)
-2. Training Framework
+4. Training Framework
 
 ## 1. Curriculum
 
@@ -111,7 +113,7 @@ Python was originally developed to be a pure scripting language. We will learn t
 #### 2.1.3. Clone This Qbiz Training Repo
 
 ```
-git clone git@github.com:Qbizinc/training.git
+git clone git@github.com:Qbizinc/cram.git
 ```
 
 #### 2.1.4. Instantiate Vagrant
